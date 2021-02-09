@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<meta charset=UTF-8>
+<title>Archivansicht von GS-Verein</title>
+<style>
+/* fake window */
+form.gsv {
+	background: rgb(236,233,216);
+	background-position: center;
+	width: 603px;
+	height: 413px;
+	position: relative;
+	font-family: "MS Sans Serif", "Microsoft Sans Serif", "Arial", "Helvetica", sans-serif;
+	font-size: 12px;
+	border: 2px solid #06e;
+	padding: 2px;
+	margin: 1em;
+}
+form.gsv h3 {
+	background: #06e;
+	color: white;
+	top: 0;
+	left: 0;
+	width: 601px;
+	height: 16px;
+	padding: 1px 3px;
+	font-size: .9em;
+}
+form.gsv .frame {
+	border: 1px inset white;
+}
+form.gsv div.outer {
+	top: 25px;
+	left: 7px;
+	width: 591px;
+	height: 356px;
+}
+form.gsv h4 {
+	background: rgb(122,150,223);
+	color: white;
+	top: 25px;
+	left: 8px;
+	width: 581px;
+	height: 16px;
+	padding: 2px 5px;
+	font-size: 1em;
+	z-index: 1;
+}
+
+
+/* tabs */
+form.gsv div.tabframe {
+	border: 2px outset white;
+	top: 72px;
+	left: 13px;
+	width: 576px;
+	height: 300px;
+	z-index: 1;
+}
+form.gsv .tab {
+	border: 2px outset white;
+	border-bottom-style: none;
+	padding: 2px;
+	background-color: inherit;
+	text-align: center;
+	z-index: 0;
+	bottom: 345px;
+}
+form.gsv .tab:hover {
+	text-decoration: underline;
+}
+form.gsv .tab:active {
+	z-index: 2;
+	border-bottom: 2px solid rgb(236,233,216);
+	bottom: 343px;
+}
+form.gsv .tab1 {
+	left: 15px;
+	width: 84px;
+}
+form.gsv .tab2 {
+	left: 107px;
+	width: 84px;
+}
+form.gsv .tab3 {
+	left: 199px;
+	width: 79px;
+}
+form.gsv .tab4 {
+	left: 286px;
+	width: 59px;
+}
+form.gsv .tab5 {
+	left: 353px;
+	width: 88px;
+}
+form#gsv1 .tab1, form#gsv2 .tab2, form#gsv3 .tab3, form#gsv4 .tab4, form#gsv5 .tab5 {
+	z-index: 1;
+	margin-left: -1px;
+	padding: 4px 3px;
+	bottom: 343px;
+}
+
+
+/* close buttons */
+form.gsv .close, form.gsv .tab {
+	cursor: default !important;
+}
+form.gsv h3 .close {
+	top: 2px;
+	right: 2px;
+	width: 13px;
+	height: 13px;
+	backgroundd: rgb(231,96,53);
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAANCAYAAAAqlHdlAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABBZJREFUeNqUlV9oHFUUxr87M7ub7W6yqVXBYoNSpFIfxKKIiC%2BCClrbF%2F8gghEio0krKP4pSdqmTU0kRvugYtugYhFKbRTbgpoXwUIf%2BxYfzEMR0myTLXF3s9nZ3dmd2et372xmdt%2Bay16YuTvn3t985ztngGN5O5v35O2M7H%2BexHDWHr1UtuUmxuHZgj2%2F1NhUzPwN1xbZgi%2Fv%2BnsO%2FuIC%2FEIOqFUgGy7ge0DTh6xXId0y%2FNIt1Pfsg%2F%2FSCLbfYQLXrgLLi0CpANRrnPUgRs06490qUF6D%2B9DjSLw%2BCDV%2BnhjBP7NfImEaSFoCmZgFwwC6TIGYmsLQz92%2FfwgPHhyDUJTuha%2BAnm1oEk6uFwnEzRs80Cdcg3DVAO7mSha7zy%2FoDfD7Bcb0Eq4IVMoRoFcPYisVgHsVcyvoPXVRh0zu6cHObgtpy9RwcdPkFDBJaAoJCP3T4%2BFfs7DUhZ%2FPwaBKydfe13%2BUJ2zI2johHfRMXdZrhQNPAqaFcCjFBLd6%2FpXgfmYK4Eso5XHoi2DtyEBHTJIgKYI9cXBC31%2F%2F7iihBAxI9PWP6bWlH0%2BEgFpH6ZTQLOXDTdKjMzykFIKpIfw6WYwIToE469G9fShQbwNMbywhjChGpU8ptjF2DoxruL43x8I1Q0T%2FB3AufVZ14Ey%2FG%2F7RPf1beL028AAfqlHdRnRwjSCMwQ8no7WPpqPr8beABD1lRXBbCJZgKq9%2Ffyxc29EGtnJuUntQtAADOJWKGr1FM5fH%2B9E%2Byu%2FsoidcgvGZZq1NOYLVOBv02KkTHTH45mNgazeQ6oIZj9IaYyEojynxbpw93hGyOvsprLgJM8bZeqEW3JquSlCZ9NGzHUHp0wstuCJMr9imXPBC8Fidg0c64YY%2BAzIpmizGg2SUVoNgnIJzR%2F9YR8idLw%2FDIphFZQ2jXTmnQFHKSI98Gz5cGX0uMvKZHEQjD%2BGudXpOtYvBw9HaT21%2Be%2BMT7t6EKb1wyaJqKm19bWCrs1Phde%2F%2BDyFMIyzZAK7KQ6uRKuXhF9hCaqh%2B8Eh0WF15E53KVZzo%2Fgx91KAnf2nzXasNhXAsKNG2Re78pAYpXvw8KjxW7kbh6T63%2Buo2GN33QmzpbQU3tMcM34GoL2tveWTJsqB3X2mlaWgvc56hrKmgXSQT9Bhngg0aVIuNG8UiqotZJE%2F%2FpUPmnr0b96Ri%2BnBVlUpF7TGm0tSVIFngku%2FoY9e5f2FlKZr51Nu49cfXMBIZ3bsMpkJQqpgkTUMqVu37rr3v4WZBYvtWAffRZ%2BBcuQwRJ5ARGFnEY2DT52FCN2LPKcN77MVQlfv2HYD754wWQEE0m%2FSfz%2F2lD1%2F4hDW41kTm6YFWxElpLxVv73uXLTQljtft4bnmpr6TI5c8e37Z39y3dcm3%2FxdgAGgMtaBWznhnAAAAAElFTkSuQmCC") 0 0 no-repeat;
+}
+form.gsv h3 .close:hover {
+	background-position: -13px 0;
+}
+form.gsv h3 .close:active {
+	background-position: -26px 0;
+}
+form.gsv div.close {
+	border: 2px outset white;
+	top: 389px;
+	left: 531px;
+	width: 62px;
+	height: 15px;
+	padding: 2px;
+	text-align: center;
+}
+form.gsv div.close:hover {
+	text-decoration: underline;
+}
+form.gsv div.close:active {
+	border-style: inset;
+}
+
+
+/* general */
+form.gsv label, form.gsv input, form.gsv select, form.gsv textarea, form.gsv h3, form.gsv h4, form.gsv a, form.gsv label, form.gsv div, form.gsv dl {
+	display: block;
+	position: absolute;
+	margin: 0;
+}
+form.gsv dl {
+	padding: 0;
+	border: none;
+}
+form.gsv label {
+	text-align: right;
+	padding: 2px 0;
+	height: 15px;
+	z-index: 1;
+}
+form.gsv input, form.gsv select, form.gsv textarea {
+	z-index: 2;
+}
+form.gsv input[type=text] {
+	height: 15px;
+}
+
+
+/* Stammdaten */
+#gsv1div1 {
+	top: 79px;
+	left: 22px;
+	width: 560px;
+	height: 206px;
+}
+#gsv1div2 {
+	top: 290px;
+	left: 22px;
+	width: 560px;
+	height: 78px;
+}
+
+
+/* Stammdaten left */
+label[for=Mitnum] {
+	top: 6px;
+	left: -16px;
+	width: 90px;
+}
+#Mitnum {
+	top: 6px;
+	left: 79px;
+	width: 123px;
+}
+label[for=Anrede] {
+	top: 29px;
+	left: -16px;
+	width: 90px;
+}
+#Anrede {
+	top: 29px;
+	left: 79px;
+	width: 123px;
+}
+label[for=Titel] {
+	top: 52px;
+	left: -16px;
+	width: 90px;
+}
+#Titel {
+	top: 52px;
+	left: 79px;
+	width: 123px;
+}
+label[for=Name] {
+	top: 87px;
+	left: -16px;
+	width: 90px;
+}
+#Name {
+	top: 87px;
+	left: 79px;
+	width: 213px;
+}
+label[for=Vorname] {
+	top: 110px;
+	left: -16px;
+	width: 90px;
+}
+#Vorname {
+	top: 110px;
+	left: 79px;
+	width: 213px;
+}
+label[for=Zusatz] {
+	top: 133px;
+	left: -16px;
+	width: 90px;
+}
+#Zusatz {
+	top: 133px;
+	left: 79px;
+	width: 213px;
+}
+label[for=Strasse] {
+	top: 156px;
+	left: -16px;
+	width: 90px;
+}
+#Strasse {
+	top: 156px;
+	left: 79px;
+	width: 213px;
+}
+label[for=Land] {
+	top: 179px;
+	left: -16px;
+	width: 90px;
+}
+#Land {
+	top: 179px;
+	left: 79px;
+	width: 31px;
+}
+#Plz {
+	top: 179px;
+	left: 129px;
+	width: 65px;
+}
+#Ort {
+	top: 179px;
+	left: 205px;
+	width: 233px;
+}
+
+
+/* Stammdaten right */
+label[for=Geschlecht] {
+	top: 6px;
+	left: 287px;
+	width: 120px;
+}
+#Geschlecht {
+	top: 6px;
+	left: 431px;
+	width: 112px;
+}
+label[for=Famstand] {
+	top: 29px;
+	left: 287px;
+	width: 120px;
+}
+#Famstand {
+	top: 29px;
+	left: 431px;
+	width: 112px;
+}
+label[for=Debinr] {
+	top: 52px;
+	left: 287px;
+	width: 120px;
+}
+#Debinr {
+	top: 52px;
+	left: 431px;
+	width: 88px;
+}
+
+
+/* Stammdaten bottom */
+label[for=Geburt] {
+	top: 6px;
+	left: -16px;
+	width: 90px;
+}
+#Geburt {
+	top: 6px;
+	left: 79px;
+	width: 86px;
+}
+label[for=Mitseit] {
+	top: 29px;
+	left: -16px;
+	width: 90px;
+}
+#Mitseit {
+	top: 29px;
+	left: 79px;
+	width: 86px;
+}
+label[for=Austritt] {
+	top: 52px;
+	left: -16px;
+	width: 90px;
+}
+#Austritt {
+	top: 52px;
+	left: 79px;
+	width: 86px;
+}
+label[for=Telefon] {
+	top: 6px;
+	left: 187px;
+	width: 70px;
+}
+#Telefon {
+	top: 6px;
+	left: 262px;
+	width: 112px;
+}
+label[for=Telefon2] {
+	top: 29px;
+	left: 187px;
+	width: 70px;
+}
+#Telefon2 {
+	top: 29px;
+	left: 262px;
+	width: 112px;
+}
+label[for=Telefax] {
+	top: 52px;
+	left: 187px;
+	width: 70px;
+}
+#Telefax {
+	top: 52px;
+	left: 262px;
+	width: 112px;
+}
+
+
+/* Vereinsdaten */
+#gsv2div1 {
+	top: 86px;
+	left: 22px;
+	width: 380px;
+	height: 108px;
+}
+#gsv2div2 {
+	top: 86px;
+	left: 409px;
+	width: 174px;
+	height: 273px;
+}
+#gsv2div3 {
+	top: 200px;
+	left: 22px;
+	width: 380px;
+	height: 89px;
+}
+#gsv2div4 {
+	top: 295px;
+	left: 22px;
+	width: 380px;
+	height: 64px;
+}
+#gsv2div2 label, #gsv2div3 label, #gsv2div4 label {
+	text-align: left;
+}
+
+
+/* Vereinsdaten left top */
+label[for=Ktonr] {
+	top: 7px;
+	left: -15px;
+	width: 138px;
+}
+#Ktonr {
+	top: 7px;
+	left: 129px;
+	width: 199px;
+}
+label[for=Blz] {
+	top: 31px;
+	left: -15px;
+	width: 138px;
+}
+#Blz {
+	top: 31px;
+	left: 129px;
+	width: 95px;
+}
+label[for=Bank] {
+	top: 55px;
+	left: -15px;
+	width: 138px;
+}
+#Bank {
+	top: 55px;
+	left: 129px;
+	width: 239px;
+}
+label[for=Ktoinhaber] {
+	top: 79px;
+	left: -15px;
+	width: 138px;
+}
+#Ktoinhaber {
+	top: 79px;
+	left: 129px;
+	width: 214px;
+}
+
+
+/* Vereinsdaten right */
+#BeitragLD {
+	bottom: 253px;
+	left: 8px;
+}
+label[for=BeitragLD] {
+	bottom: 251px;
+	left: 27px;
+	width: 145px;
+}
+#BeitragMD {
+	bottom: 232px;
+	left: 8px;
+}
+label[for=BeitragMD] {
+	bottom: 230px;
+	left: 27px;
+	width: 170px;
+}
+#BeitragSatz {
+	bottom: 211px;
+	left: 8px;
+}
+label[for=Satz] {
+	bottom: 209px;
+	left: 27px;
+	width: 120px;
+}
+#Satz {
+	top: 65px;
+	left: 27px;
+	width: 97px;
+}
+#Satz+label[for=Satz] {
+	top: 88px;
+	width: 170px;
+	overflow: hidden;
+}
+label[for=Gbetrag] {
+	bottom: 124px;
+	left: 17px;
+	width: 160px;
+}
+#Gbetrag {
+	top: 151px;
+	left: 17px;
+	width: 116px;
+}
+label[for=Zahlweise] {
+	bottom: 81px;
+	left: 17px;
+	width: 100px;
+}
+#Zahlweise {
+	top: 191px;
+	left: 17px;
+	width: 140px;
+}
+label[for=Zahlart] {
+	bottom: 43px;
+	left: 17px;
+	width: 70px;
+}
+#Zahlart {
+	top: 229px;
+	left: 17px;
+	width: 140px;
+}
+label[for=ZahlanfangWahr] {
+	top: 253px;
+	left: 17px;
+	width: 42px;
+}
+#ZahlanfangWahr {
+	top: 255px;
+	left: 43px;
+}
+#ZahlanfangWahr+label[for=ZahlanfangWahr] {
+	top: 253px;
+	left: 60px;
+	width: 35px;
+}
+#ZahlanfangFalsch {
+	top: 255px;
+	left: 79px;
+}
+label[for=ZahlanfangFalsch] {
+	top: 253px;
+	left: 96px;
+	width: 80px;
+}
+
+
+/* Vereinsdaten left center */
+label[for=Betreuer] {
+	bottom: 71px;
+	left: 10px;
+	width: 120px;
+}
+#Betreuer {
+	top: 19px;
+	left: 10px;
+	width: 137px;
+}
+label[for=Abteilung] {
+	bottom: 27px;
+	left: 10px;
+	width: 110px;
+}
+#Abteilung {
+	top: 63px;
+	left: 10px;
+	width: 137px;
+}
+label[for=Funktion] {
+	bottom: 27px;
+	left: 222px;
+	width: 70px;
+}
+#Funktion {
+	top: 63px;
+	left: 222px;
+	width: 142px;
+}
+label[for=Aktiv] {
+	top: 13px;
+	left: 242px;
+	width: 110px;
+}
+#Aktiv {
+	top: 15px;
+	left: 221px;
+}
+
+
+/* Vereinsdaten left bottom */
+label[for=Zahlfremd] {
+	top: 3px;
+	left: 27px;
+	width: 155px;
+	height: 30px !important;
+}
+#Zahlfremd {
+	top: 5px;
+	left: 6px;
+}
+label[for=Bucheuro] {
+	bottom: 3px;
+	left: 27px;
+	width: 110px;
+}
+#Bucheuro {
+	bottom: 5px;
+	left: 6px;
+}
+
+
+/* Zusatzdaten */
+#gsv3div1 {
+	top: 89px;
+	left: 23px;
+	width: 562px;
+	height: 224px;
+}
+
+
+/* Zusatzdaten left */
+label[for=Zu1] {
+	top: 7px;
+	left: -15px;
+	width: 118px;
+}
+#Zu1 {
+	top: 7px;
+	left: 108px;
+	width: 164px;
+}
+label[for=Zu2] {
+	top: 33px;
+	left: -15px;
+	width: 118px;
+}
+#Zu2 {
+	top: 33px;
+	left: 108px;
+	width: 164px;
+}
+label[for=Zu3] {
+	top: 59px;
+	left: -15px;
+	width: 118px;
+}
+#Zu3 {
+	top: 59px;
+	left: 108px;
+	width: 164px;
+}
+label[for=Zu4] {
+	top: 85px;
+	left: -15px;
+	width: 118px;
+}
+#Zu4 {
+	top: 85px;
+	left: 108px;
+	width: 164px;
+}
+label[for=Zu5] {
+	top: 111px;
+	left: -15px;
+	width: 118px;
+}
+#Zu5 {
+	top: 111px;
+	left: 108px;
+	width: 164px;
+}
+label[for=Zu6] {
+	top: 137px;
+	left: -15px;
+	width: 118px;
+}
+#Zu6 {
+	top: 137px;
+	left: 108px;
+	width: 164px;
+}
+label[for=Zu7] {
+	top: 163px;
+	left: -15px;
+	width: 118px;
+}
+#Zu7 {
+	top: 163px;
+	left: 108px;
+	width: 164px;
+}
+label[for=Zu8] {
+	top: 189px;
+	left: -15px;
+	width: 118px;
+}
+#Zu8 {
+	top: 189px;
+	left: 108px;
+	width: 164px;
+}
+
+
+/* Zusatzdaten right */
+label[for=Zu9] {
+	top: 7px;
+	left: 263px;
+	width: 118px;
+}
+#Zu9 {
+	top: 7px;
+	left: 386px;
+	width: 164px;
+}
+label[for=Zu10] {
+	top: 33px;
+	left: 263px;
+	width: 118px;
+}
+#Zu10 {
+	top: 33px;
+	left: 386px;
+	width: 162px;
+}
+label[for=Zu11] {
+	top: 59px;
+	left: 263px;
+	width: 118px;
+}
+#Zu11 {
+	top: 59px;
+	left: 386px;
+	width: 162px;
+}
+label[for=Zu12] {
+	top: 85px;
+	left: 263px;
+	width: 118px;
+}
+#Zu12 {
+	top: 85px;
+	left: 386px;
+	width: 162px;
+}
+label[for=Zu13] {
+	top: 111px;
+	left: 263px;
+	width: 118px;
+}
+#Zu13 {
+	top: 111px;
+	left: 386px;
+	width: 162px;
+}
+label[for=Zu14] {
+	top: 137px;
+	left: 263px;
+	width: 118px;
+}
+#Zu14 {
+	top: 137px;
+	left: 386px;
+	width: 162px;
+}
+label[for=Zu15] {
+	top: 163px;
+	left: 263px;
+	width: 118px;
+}
+#Zu15 {
+	top: 163px;
+	left: 386px;
+	width: 162px;
+}
+label[for=Zu16] {
+	top: 189px;
+	left: 263px;
+	width: 118px;
+}
+#Zu16 {
+	top: 189px;
+	left: 386px;
+	width: 162px;
+}
+
+
+/* Anschrift */
+#gsv4div1 {
+	top: 81px;
+	left: 235px;
+	width: 347px;
+	height: 276px;
+}
+label[for=Branrede] {
+	bottom: 302px;
+	left: 244px;
+	width: 100px;
+	text-align: left !important;
+}
+#Branrede {
+	top: 116px;
+	left: 244px;
+	width: 289px;
+}
+#Post1 {
+	top: 154px;
+	left: 244px;
+	width: 289px;
+}
+#Post2 {
+	top: 178px;
+	left: 244px;
+	width: 289px;
+}
+#Post3 {
+	top: 202px;
+	left: 244px;
+	width: 289px;
+}
+#Post4 {
+	top: 226px;
+	left: 244px;
+	width: 289px;
+}
+#Post5 {
+	top: 250px;
+	left: 244px;
+	width: 289px;
+}
+#Post6 {
+	top: 274px;
+	left: 244px;
+	width: 289px;
+}
+
+
+/* Bemerkungen */
+#Bemerk {
+	top: 83px;
+	left: 22px;
+	width: 554px;
+	min-width: 554px;
+	max-width: 554px;
+	height: 240px;
+	min-height: 240px;
+	max-height: 275px;
+}
+</style>
+<script>
+(function () {
+	// IE 8 isn't officially supported, but this should make it work
+	if (! document.getElementsByClassName) {
+		document.getElementsByClassName = function(className) {
+			return this.querySelectorAll("."+className);
+		};
+//		Element.prototype.getElementsByClassName = document.getElementsByClassName;
+	}
+	var onloadOld = window.onload;
+	
+	// set up tabs
+	window.onload = function gsvTabs () {
+		var tabClick = function () {
+			this.parentNode.style.display = "none";
+			document.getElementById("gsv"+this.id.substr(7,1)).style.display = "block";
+		};
+		
+		// hide initially inactive tabs
+		var initialTab = Math.max(1, Math.min(5, parseInt( window.location.hash.substr(1) )));
+		if (isNaN(initialTab)) { initialTab = 1; }
+		for (var i = 1; i <= 5; i++) {
+			if (i != initialTab) {
+				document.getElementById("gsv"+i).style.display = "none";
+			}
+			
+			// set button handlers
+			for (var j = 1; j <= 5; j++) {
+				document.getElementById("gsv"+i+"tab"+j).onclick = tabClick;
+			}
+		}
+		var closeButtons = document.getElementsByClassName("close");
+		for (var i = 0; i < closeButtons.length; i++) {
+			closeButtons[i].onclick = function () {
+				if (window.location.protocol == "file:") { return false; }
+				if (history.length > 1) { history.back(); }
+				else { document.location.href = "./"; }
+				return false;  // cancel event in case this is an <a> element
+			};
+		}
+		
+		// extract fixed fee
+		var feeOptions = document.getElementById("Satz").options;
+		for (var i = 0; i < feeOptions.length; i++) {
+			if (! feeOptions.item(i).selected) { continue; }
+			var itemText = feeOptions.item(i).textContent || feeOptions.item(i).innerText;  // IE
+			var match = itemText.match(/\[(.*)\]$/);
+			if (match) {
+				document.getElementById("SatzInfo").innerHTML = "(z.Zt. "+match[1]+" / Jahr)";
+			}
+			break;
+		}
+		
+		// make data easier readable, but still read-only
+//		var popupMenus = document.getElementsByTagName("SELECT");
+		var popupMenus = [ document.getElementById("Satz") ];
+		for (var i = 0; i < popupMenus.length; i++) {
+			popupMenus[i].setAttribute("data-value", popupMenus[i].value);
+			popupMenus[i].onchange = function () {
+				this.value = this.getAttribute("data-value");
+			};
+			popupMenus[i].disabled = false;
+		}
+/*
+		var inputFields = document.getElementsByTagName("INPUT");
+		for (var i = 0; i < inputFields.length; i++) {
+			if (inputFields[i].getAttribute("type") != "checkbox") { continue; }
+			inputFields[i].setAttribute("data-value", inputFields[i].checked);
+			inputFields[i].onclick = function () {
+				this.checked = this.getAttribute("data-value") == "true";
+			};
+			inputFields[i].disabled = false;
+		}
+*/
+	};
+	
+	if (document.addEventListener) {
+		document.addEventListener('DOMContentLoaded', window.onload, false);
+		window.onload = onloadOld;
+	}
+})();
+</script>
+
+
+<!--
+<h2>Archivansicht von GS-Verein</h2>
+NUMMER <%= $paradox->{Nummer} %>
+(interne Paradox-Datenbank-ID; nicht in GS-Verein sichtbar)
+-->
+
+
+
+<form class=gsv id=gsv1>
+
+<h3>GS-Verein <a href="./" class=close></a></h3>
+
+<h4>Datenansicht · Yankee, Yasmin · 000 (ausgetreten)</h4>
+
+<div class="frame outer"></div>
+<div class=tabframe id=gsv1tabframe></div>
+<div class="tab tab1" id=gsv1tab1>Stammdaten</div>
+<div class="tab tab2" id=gsv1tab2>Vereinsdaten</div>
+<div class="tab tab3" id=gsv1tab3>Zusatzdaten</div>
+<div class="tab tab4" id=gsv1tab4>Anschrift</div>
+<div class="tab tab5" id=gsv1tab5>Bemerkungen</div>
+
+<dl class=frame id=gsv1div1>
+
+<dt><label for=Mitnum title="GS-Verein-Nummer (keine echte Mitgliedsnummer) / „MNr-alt“">Nummer</label></dt>
+<dd><input type=text id=Mitnum value="000"></dd>
+
+<dt><label for=Anrede>Anrede</label></dt>
+<dd><select id=Anrede>
+<option value="Firma">Firma</option>
+<option value="Frau">Frau</option>
+<option value="Herr" selected>Herr</option>
+</select></dd>
+
+<dt><label for=Titel>Titel</label></dt>
+<dd><select id=Titel>
+<option value="" selected></option>
+<option value="Dipl-.Ing.">Dipl-.Ing.</option>
+<option value="Dr.">Dr.</option>
+<option value="Dr. med.">Dr. med.</option>
+<option value="Prof.">Prof.</option>
+</select></dd>
+
+<dt><label for=Name title="Nachname">Name</label></dt>
+<dd><input type=text id=Name value="Yankee"></dd>
+
+<dt><label for=Vorname title="Vorname; leer für juristische Personen">Vorname</label></dt>
+<dd><input type=text id=Vorname value="Yasmin"></dd>
+
+<dt><label for=Zusatz title="Adresszusatz; z. B. Ortsteil, Straße (statt Postfach) oder c/o">Adresszusatz</label></dt>
+<dd><input type=text id=Zusatz value="Poste restante"></dd>
+
+<dt><label for=Strasse title="Straße (oder Postfach)">Straße</label></dt>
+<dd><input type=text id=Strasse value="Münsterplatz 17"></dd>
+
+<dt><label for=Land>Land PLZ Ort</label></dt>
+<dd>
+<input type=text id=Land value="D">
+<input type=text id=Plz value="53111">
+<input type=text id=Ort value="Bonn">
+</dd>
+
+<dt><label for=Geschlecht>Geschlecht</label></dt>
+<dd><select id=Geschlecht>
+<option value="M" selected>männlich</option>
+<option value="W">weiblich</option>
+<option value="L">&lt;LEER&gt;</option>
+</select></dd>
+
+<dt><label for=Famstand>Familienstand</label></dt>
+<dd><select id=Famstand>
+<option value="ledig">ledig</option>
+<option value="verheiratet">verheiratet</option>
+<option value="geschieden">geschieden</option>
+<option value="verwitwet">verwitwet</option>
+<option value="&lt;LEER&gt;" selected>&lt;LEER&gt;</option>
+</select></dd>
+
+<dt><label for=Debinr title="Debitorennummer; benutzt zur Bildung der initialen SEPA-Mandatsreferenz">Debitorennummer</label></dt>
+<dd><input type=text id=Debinr value="10000"></dd>
+
+</dl>
+<dl class=frame id=gsv1div2>
+
+<dt><label for=Geburt>Geburtstag</label></dt>
+<dd><input type=text id=Geburt value="██.██.1904"></dd>
+
+<dt><label for=Mitseit title="Beginn der Mitgliedschaft; 01.09.1967 = Gründungsmitglied">Eintritt</label></dt>
+<dd><input type=text id=Mitseit value="01.02.1934"></dd>
+
+<dt><label for=Austritt title="Ende der Mitgliedschaft; in 1967 = genaues Datum unbekannt; nicht am 31.12. = Vereinsausschluss oder verstorben">Austritt</label></dt>
+<dd><input type=text id=Austritt value="31.12.1977"></dd>
+
+<dt><label for=Telefon title="Telefon privat">Telefon 1</label></dt>
+<dd><input type=text id=Telefon value="03298 5559147"></dd>
+
+<dt><label for=Telefon2 title="Telefon beruflich">Telefon 2</label></dt>
+<dd><input type=text id=Telefon2 value="03298 5559148"></dd>
+
+<dt><label for=Telefax title="Telefax: (p) = privat, (b)/(g) = beruflich">Telefax</label></dt>
+<dd><input type=text id=Telefax value="03298 5559149 (p/g)"></dd>
+
+</dl>
+
+<div class=close>Schließen</div>
+
+</form>
+
+
+
+<form class=gsv id=gsv2>
+
+<h3>GS-Verein <a href="./" class=close></a></h3>
+
+<h4>Datenansicht · Yankee, Yasmin · 000 (ausgetreten)</h4>
+
+<div class="frame outer"></div>
+<div class=tabframe id=gsv2tabframe></div>
+<div class="tab tab1" id=gsv2tab1>Stammdaten</div>
+<div class="tab tab2" id=gsv2tab2>Vereinsdaten</div>
+<div class="tab tab3" id=gsv2tab3>Zusatzdaten</div>
+<div class="tab tab4" id=gsv2tab4>Anschrift</div>
+<div class="tab tab5" id=gsv2tab5>Bemerkungen</div>
+
+<dl class=frame id=gsv2div1>
+
+<dt><label for=Ktonr title="Kontonummer; bei IBAN: Stellen 13–22, dann Leerzeichen, gefolgt von Stellen 1–4">Konto-/Kartennummer</label></dt>
+<dd><input type=text id=Ktonr value="██████████"></dd>
+
+<dt><label for=Blz title="BLZ / Stellen 5–12 der IBAN">Bankleitzahl/Gültigkeit</label></dt>
+<dd><input type=text id=Blz value="38401234"></dd>
+
+<dt><label for=Bank title="SWIFT-BIC und/oder Institutsbezeichnung im Klartext">Bank-/Kartenname</label></dt>
+<dd><input type=text id=Bank value="Spaßbank Witzenhausen"></dd>
+
+<dt><label for=Ktoinhaber>Inhaber Konto/Karte</label></dt>
+<dd><input type=text id=Ktoinhaber value="Yasmin Janke"></dd>
+
+</dl>
+<div class=frame id=gsv2div2>
+
+<p><input type=radio name=Beitrag id=BeitragLD value=LD>
+<label for=BeitragLD>Beitrag altersabhängig</label>
+<input type=radio name=Beitrag id=BeitragMD value=MD>
+<label for=BeitragMD>Beitrag nach Mitgliedsdauer</label>
+<input type=radio name=Beitrag id=BeitragSatz value=Satz checked>
+<label for=Satz title="Beitragsschlüsselnummer">fester Beitragssatz</label>
+<select id=Satz>
+<option value="01">01 aktiv         [120,00 EUR]</option>
+<option value="02">02 passiv        [36,00 EUR]</option>
+<option value="03">03 Jugend (bis 19J.)   [35,00 EUR]</option>
+<option value="04">04 aktiv, in Ausbildung   [60,00 EUR]</option>
+<option value="05">05 Ehrenmitglied   [0,00 EUR]</option>
+<option value="06">06 aktiv mit Stegbox   [185,00 EUR]</option>
+<option value="07">07 aktiv mit Bootsnutzung (nicht ÜL)   [120,00 EUR]</option>
+<option value="08">08 aktiv in Ausb. mit Stegbox   [125,00 EUR]</option>
+<option value="09">09 aktiv in Ausb. m. Bootsnutzung(nicht ÜL)   [60,00 EUR]</option>
+<option value="10">10 Jugend mit Bootsnutzung (nicht ÜL)   [90,00 EUR]</option>
+<option value="11">11 Sondervereinbarung   [99999,99 EUR]</option>
+<option value="12">12 (gestrichen, jetzt Satz 09)   [99999,99 EUR]</option>
+<option value="13">13 Aktiv mit 2 Stegboxen   [250,00 EUR]</option>
+<option value="14" selected>14 Aktiv mit 1/2 Stegbox (Eignergemeinsch.)   [152,50 EUR]</option>
+<option value="15">15 Aktiv m. Boxen f. 2 Boote (davon 1 Kanu)   [205,00 EUR]</option>
+<option value="16">16 Jugend mit Stegbox   [100,00 EUR]</option>
+<option value="17">17 Nichtmitglied   [0,00 EUR]</option>
+</select>
+<label for=Satz id=SatzInfo></label>
+
+<p><label for=Gbetrag title="jährlicher Grundbeitrag für Lastschrifteinzug">Grundbetrag (pro Intervall)</label>
+<input type=text id=Gbetrag value="92,50 EUR">
+
+<p><label for=Zahlart title="Zahlungsweise; Überweisung = nicht SEPA-fähig / Selbstzahler">Zahlungsweise</label>
+<select id=Zahlart>
+<option value=""></option>
+<option value="Bankeinzug" selected>Bankeinzug</option>
+<option value="Bar/Scheck">Bar/Scheck</option>
+<option value="Kreditkarte">Kreditkarte</option>
+<option value="Überweisung">Überweisung</option>
+</select>
+
+<p><label for=Zahlweise>Intervall</label>
+<select id=Zahlweise>
+<option value=""></option>
+<option value="jährlich" selected>jährlich</option>
+<option value="halbjährlich">halbjährlich</option>
+<option value="quartalsweise">quartalsweise</option>
+<option value="monatlich">monatlich</option>
+</select>
+
+<p><label for=ZahlanfangWahr>zum</label>
+<input type=radio name=Zahlanfang id=ZahlanfangWahr value=Wahr checked>
+<label for=ZahlanfangWahr>1.</label>
+<input type=radio name=Zahlanfang id=ZahlanfangFalsch value=Falsch>
+<label for=ZahlanfangFalsch>15.   zahlbar</label>
+
+</div>
+<dl class=frame id=gsv2div3>
+
+<dt><label for=Betreuer title="verantwortlich für bestimmte Teilaufgaben oder aktiv in Ausschüssen">Beauftragt für/als:</label></dt>
+<dd><select id=Betreuer>
+<option value=""></option>
+<option value="Arbeitsstd. u. Stegdienstliste">Arbeitsstd. u. Stegdienstliste</option>
+<option value="Chronik">Chronik</option>
+<option value="IT">IT</option>
+<option value="Liegeplatz-Verwaltung">Liegeplatz-Verwaltung</option>
+<option value="Poststelle Eingang">Poststelle Eingang</option>
+<option value="Schaukasten">Schaukasten</option>
+<option value="stv. Vereinsb. VAYU">stv. Vereinsb. VAYU</option>
+<option value="Übungsleiter">Übungsleiter</option>
+<option value="Vereinsb. JAN VAN GALEN">Vereinsb. JAN VAN GALEN</option>
+<option value="Vereinsb. VAYU">Vereinsb. VAYU</option>
+<option value="Wassermarken" selected>Wassermarken</option>
+</select></dd>
+
+<dt><label for=Abteilung title="Mitgliedsschaftsart nach Satzung; „aktiv/passiv“ für Ehrenmitglieder ist umgangssprachlich (benutzt für die Aktiven-Liste); „passiv, zuvor aktiv“ sind passive Mitglieder mit Stegdienst">Mitgliedsstatus</label></dt>
+<dd><select id=Abteilung>
+<option value="Aktiv">Aktiv</option>
+<option value="Aktiv, Ehrenmitglied">Aktiv, Ehrenmitglied</option>
+<option value="Aktiv, Gastmitglied">Aktiv, Gastmitglied</option>
+<option value="Jugend">Jugend</option>
+<option value="Jugend, Gastmitglied">Jugend, Gastmitglied</option>
+<option value="Nichtmitglied">Nichtmitglied</option>
+<option value="Nichtmitglied, Kontoinhaber">Nichtmitglied, Kontoinhaber</option>
+<option value="Passiv">Passiv</option>
+<option value="Passiv, Ehrenmitglied" selected>Passiv, Ehrenmitglied</option>
+<option value="Passiv, Gastmitglied">Passiv, Gastmitglied</option>
+<option value="Passiv, zuvor Aktiv">Passiv, zuvor Aktiv</option>
+</select></dd>
+
+<dt><label for=Aktiv title="„aktiv“ im Sinne von „bringt sich ein“ o. ä., hat nichts mit Mitgliedsstatus „Aktiv/Passiv/Ehren/Jugend“ zu tun">aktives Mitglied</label></dt>
+<dd><input type=checkbox id=Aktiv checked></dd>
+
+<dt><label for=Funktion title="gewähltes Satzungsamt">Funktion</label></dt>
+<dd><select id=Funktion>
+<option value="" selected></option>
+<option value="1. Sportwart">1. Sportwart</option>
+<option value="1. Steg- &amp; Zeugwart">1. Steg- &amp; Zeugwart</option>
+<option value="1. Vorsitzender">1. Vorsitzender</option>
+<option value="2. Schatzmeister">2. Schatzmeister</option>
+<option value="2. Sportwart">2. Sportwart</option>
+<option value="2. Steg- &amp; Zeugwart">2. Steg- &amp; Zeugwart</option>
+<option value="Ehrenvorsitzender">Ehrenvorsitzender</option>
+<option value="Geschäftsführer">Geschäftsführer</option>
+<option value="Pressewart">Pressewart</option>
+<option value="Schatzmeister">Schatzmeister</option>
+</select></dd>
+
+</dl>
+<dl class=frame id=gsv2div4>
+
+<dt><label for=Zahlfremd title="ankreuzen, wenn dies entweder ein Nichtmitglied ist oder kein eigenes SEPA-Mandat vorliegt (z. B. bei Kindern, für die ihre Eltern zahlen)">Beitragsdaten bei diesem Mitglied nicht abrechnen</label></dt>
+<dd><input type=checkbox id=Zahlfremd></dd>
+
+<dt><label for=Bucheuro>in EUR buchen</label></dt>
+<dd><input type=checkbox id=Bucheuro checked></dd>
+
+</dl>
+
+<div class=close>Schließen</div>
+
+</form>
+
+
+
+<form class=gsv id=gsv3>
+
+<h3>GS-Verein <a href="./" class=close></a></h3>
+
+<h4>Datenansicht · Yankee, Yasmin · 000 (ausgetreten)</h4>
+
+<div class="frame outer"></div>
+<div class=tabframe id=gsv3tabframe></div>
+<div class="tab tab1" id=gsv3tab1>Stammdaten</div>
+<div class="tab tab2" id=gsv3tab2>Vereinsdaten</div>
+<div class="tab tab3" id=gsv3tab3>Zusatzdaten</div>
+<div class="tab tab4" id=gsv3tab4>Anschrift</div>
+<div class="tab tab5" id=gsv3tab5>Bemerkungen</div>
+
+<dl class=frame id=gsv3div1>
+
+<dt><label for=Zu1 title="Zu1">Mobiltelefon</label></dt>
+<dd><input type=text id=Zu1 value="0169 55501375 (Tochter)"></dd>
+
+<dt><label for=Zu2 title="Zu2: E-Mail; mehrere Adressen möglich (getrennt durch Kommata „ , “)">EMail</label></dt>
+<dd><input type=text id=Zu2 value="yasmin@example.com"></dd>
+
+<dt><label for=Zu3 title="Zu3: zusätzliche Kontaktdaten">sonstige Tel, etc.</label></dt>
+<dd><input type=text id=Zu3 value="Campingplatz Nr. 377, Badstr. 53 Bonn, 0169 5558641 (Pager)"></dd>
+
+<dt><label for=Zu4 title="Zu4">eigenes Boot?</label></dt>
+<dd><input type=text id=Zu4 value="ja"></dd>
+
+<dt><label for=Zu5 title="Zu5: Format: „Bootsname / Segelnummer“, evtl. statt Segelnummer sonstiges Unterscheidungszeichen">Bootsname/Sglnr.</label></dt>
+<dd><input type=text id=Zu5 value="Capella / G-234"></dd>
+
+<dt><label for=Zu6 title="Zu6: Bootstyp oder -klasse, evtl. Breite über alles oder weitere Maße in Klammern">Klasse (o. ä.)</label></dt>
+<dd><input type=text id=Zu6 value="Eigenbau Sperrholz (2,50 m)"></dd>
+
+<dt><label for=Zu7 title="Zu7: früher: Wassermarkennummer">Wassermarke Nr.</label></dt>
+<dd><input type=text id=Zu7 value="24"></dd>
+<!--
+<dt><label for=Zu7 title="Zu7: heute: SEPA-Mandatsreferenz und -datum (ISO-Format)">Mandat (Ref, Dat)</label></dt>
+<dd><input type=text id=Zu7 value="10000, 1966-11-22"></dd>
+-->
+
+<dt><label for=Zu8 title="Zu8: einmalige Gebühr für das Winterlager bezahlt (ja/nein)">Winterl. Bootshs.?</label></dt>
+<dd><input type=text id=Zu8 value="ja"></dd>
+
+<dt><label for=Zu9 title="Zu9: Liegeplatzbezeichnung (neu oder alt)">Stegplatz - Nr.</label></dt>
+<dd><input type=text id=Zu9 value="13"></dd>
+
+<dt><label for=Zu10 title="Zu10: gekaufte Box; Format: „Boxennummer / Jahr“, jedoch viele Unklarheiten">Box gekauft?/Jahr</label></dt>
+<dd><input type=text id=Zu10 value="???; wenn, dann wahrsch. 47"></dd>
+
+<dt><label for=Zu11 title="Zu11: Schlüssel; Format: „ausgegeben / Pfand eingezogen“; ist eines der beiden Felder leer, dann ist der Vorgang offen; mehrere Schlüssel getrennt durch „ + “">Schlüsselnr./Pfand</label></dt>
+<dd><input type=text id=Zu11 value="1 / 5,00DM + Nr. 1 / 15,00DM (CES, verloren) + 2 / 25,00EUR (CES) + Nr. 1 / 50,00EUR (Walter?)"></dd>
+
+<!--
+<dt><label for=Zu12 title="Zu12: Beruf, Branche, Hobbies, Interessen, …">Beruf/Branche</label></dt>
+<dd><input type=text id=Zu12 value=""></dd>
+-->
+<dt><label for=Zu12 title="Zu12">Beruf</label></dt>
+<dd><input type=text id=Zu12 value="Angestellter"></dd>
+<!--
+<dt><label for=Zu12 title="Zu7: heute: SEPA-Mandatsreferenz und -datum (ISO-Format)">Mandat (Ref, Dat)</label></dt>
+<dd><input type=text id=Zu12 value="10000, 1966-11-22"></dd>
+-->
+
+<dt><label for=Zu13 title="Zu13: Trainingsgruppe (Jugend)">Trainingsgruppe</label></dt>
+<dd><input type=text id=Zu13 value="470"></dd>
+
+<dt><label for=Zu14 title="Zu14: Jahre, in denen Segelkurse besucht wurden">TN Ausb.-Kurs in</label></dt>
+<dd><input type=text id=Zu14 value="48/49"></dd>
+
+<dt><label for=Zu15 title="Zu15: Bemerkungen für den Vorstand, z. B. Freistellungen Stegdienst/Arbeiten">Bemerkung</label></dt>
+<dd><input type=text id=Zu15 value="kein Stegdienst, Arbeiten: Vertretung Ludwig Lima"></dd>
+
+<dt><label for=Zu16 title="Zu16: Bemerkung für MV-Anwesenheitsliste, z. B. „Anschrift unbekannt (2010) – wer kennt diesen Mann?“ o. ä.">Bem. f. Mitgl.Vers.</label></dt>
+<dd><input type=text id=Zu16 value="entschuldigt 17.03.75"></dd>
+
+</dl>
+
+<div class=close>Schließen</div>
+
+</form>
+
+
+
+<form class=gsv id=gsv4>
+
+<h3>GS-Verein <a href="./" class=close></a></h3>
+
+<h4>Datenansicht · Yankee, Yasmin · 000 (ausgetreten)</h4>
+
+<div class="frame outer"></div>
+<div class=frame id=gsv4div1></div>
+<div class=tabframe id=gsv4tabframe></div>
+<div class="tab tab1" id=gsv4tab1>Stammdaten</div>
+<div class="tab tab2" id=gsv4tab2>Vereinsdaten</div>
+<div class="tab tab3" id=gsv4tab3>Zusatzdaten</div>
+<div class="tab tab4" id=gsv4tab4>Anschrift</div>
+<div class="tab tab5" id=gsv4tab5>Bemerkungen</div>
+
+<p><label for=Branrede title="diese Angaben wurden meist von GS-Verein automatisch erzeugt und sind nicht verlässlich">Briefanrede</label>
+<input type=text id=Branrede value="Hi Yassie,">
+
+<p><input type=text id=Post1 value="">
+<br><input type=text id=Post2 value="Yasmin Janke">
+<br><input type=text id=Post3 value="Poste restante">
+<br><input type=text id=Post4 value="Münsterplatz 17">
+<br><input type=text id=Post5 value="53111 Bonn">
+<br><input type=text id=Post6 value="">
+
+<div class=close>Schließen</div>
+
+</form>
+
+
+
+<form class=gsv id=gsv5>
+
+<h3>GS-Verein <a href="./" class=close></a></h3>
+
+<h4>Datenansicht · Yankee, Yasmin · 000 (ausgetreten)</h4>
+
+<div class="frame outer"></div>
+<div class=tabframe id=gsv5tabframe></div>
+<div class="tab tab1" id=gsv5tab1>Stammdaten</div>
+<div class="tab tab2" id=gsv5tab2>Vereinsdaten</div>
+<div class="tab tab3" id=gsv5tab3>Zusatzdaten</div>
+<div class="tab tab4" id=gsv5tab4>Anschrift</div>
+<div class="tab tab5" id=gsv5tab5>Bemerkungen</div>
+
+<textarea id=Bemerk rows=15 cols=66>
+Geb.-Datum fraglich
+Eintrittsdatum fraglich
+
+Zahlungserinnerung am 27.08.55 für Beitrag Passiv 1954
+neue Anschrift von Einwohnermeldeamt Marienheide
+neu abgeschickt am 02.05.56
+Will laut G.F. ausgetreten sein. Erklärung nie erhalten.
+2. Mahnung versandt am 27.12.56
+Ausschluss durch VS 30.10.57: Schulden
+angefochten und aufgehoben nach Barzahlung in MV 22.03.58
+
+früheres Boot:
+NN / 2367, 470er
+
+30.10.61  Wechsel Passiv auf Aktiv zum 01.01.62
+Mrz 1965 AKT -> PASS
+
+Nur zK: am 26.11.2003 verstorben. Anruf Lebensgefährtin am 29.12.2003.
+</textarea>
+
+<div class=close>Schließen</div>
+
+</form>
+
+
+<p>Mockup von GS-Verein, wie es um 2005 so ungefähr aussah. Fantasiedaten.
+
+<p>Viele Feldnamen verfügen über Tooltips, welche das Format oder die Bedeutung des Felds beschreiben. Diese Tooltips erläutern die Business-Logik der SKGB und existierten nicht in GS-Verein.
