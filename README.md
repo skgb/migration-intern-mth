@@ -19,7 +19,7 @@ mit folgenden Änderungen:
 Weiterverwendung
 ----------------
 
-(c) 2021 [Arne Johannessen](https://arne.johannessen.de/)
+(c) 2017–2018, 2021 [Arne Johannessen](https://arne.johannessen.de/)
 
 Dies ist freie Software, weiterverwendbar unter den Bedingungen der
 [Artistic License 2.0](https://github.com/skgb/migration-intern-mth/blob/gs-verein-mockup/LICENSE).
