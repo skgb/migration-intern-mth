@@ -1,6 +1,8 @@
 Mockup von GS-Verein
 ====================
 
+<https://skgb.github.io/migration-intern-mth/gs-verein>
+
 In HTML implementiertes Mockup von GS-Verein anno ca. 2005.
 
 Basiert auf [SKGB-intern][] („Archivansicht von GS-Verein“)
