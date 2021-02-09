@@ -12,7 +12,7 @@ CREATE (p)<-[:FOR {kind:'mobil', wrong:true}]-(:Address {address:'0170 1368746',
 CREATE (p)<-[:FOR {kind:'mobil'}]-(:Address {address:'+31 6 27581476', type:'phone'})
 CREATE (p)<-[:FOR {kind:'privat'}]-(:Address {address:'02203 9728564', type:'phone', comment:'Geheimnummer'})
 CREATE (p)<-[:FOR {kind:'privat', primary:'street'}]-(:Address {address:'Wahn\nHeidestraße 17\n51147 Köln', type:'street', place:'Köln'})
-CREATE (p)<-[:FORz]-(n:Address {address:'Piet Miedemaweg 15\n9264 TJ Earnewald\nDie Niederlande', type:'street', place:'Friesland (NL)'})
+CREATE (p)<-[:FOR]-(n:Address {address:'Piet Miedemaweg 15\n9264 TJ Earnewald\nDie Niederlande', type:'street', place:'Friesland (NL)'})
 CREATE (p)<-[:FOR {kind:'beruflich'}]-(:Address {address:'c/o Flughafen\nPostfach 980120\n51129 Köln', type:'street', place:'Köln'})
 CREATE (p)<-[:FOR {kind:'beruflich'}]-(:Address {address:'emustermann@example.com', type:'email'})
 CREATE (p)<-[:FOR {kind:'beruflich', primary:'voice'}]-(:Address {address:'02203 40-8713', type:'phone'})
