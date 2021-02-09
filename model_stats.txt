@@ -1,0 +1,118 @@
+---
+node_count:
+  Address: 718
+  Berth: 38
+  Boat: 70
+  Club: 1
+  ClubKey: 155
+  Mandate: 83
+  Person: 217
+  Role: 50
+  System: 1
+node_prop_count:
+  Address:
+    address: 717
+    comment: 37
+    place: 164
+    type: 710
+  Berth:
+    comment: 5
+    ref: 38
+    width: 34
+  Boat:
+    canoe: 1
+    class: 63
+    comment: 21
+    count: 3
+    draught: 2
+    engine: 2
+    loa: 4
+    mark: 49
+    minDraught: 1
+    name: 40
+    registration: 2
+    sailnumber: 17
+    width: 13
+  Club:
+    abbr: 1
+    name: 1
+  ClubKey:
+    make: 131
+    nr: 137
+  Mandate:
+    comment: 1
+    iban: 83
+    terminated: 1
+    umr: 83
+  Person:
+    born: 183
+    debitBase: 188
+    debitReason: 27
+    debitorSerial: 173
+    gender: 190
+    gsvereinId: 191
+    name: 217
+    nameSortable: 1
+    prefix: 5
+    salutation: 7
+    userId: 100
+  Role:
+    name: 50
+    role: 50
+  System:
+    longLoginFails: 1
+    longLoginReport: 1
+    longLoginReset: 1
+    shortLoginFails: 1
+    shortLoginReport: 1
+    shortLoginReset: 1
+rel_count:
+  COLLECTOR: 5
+  DEBITOR: 97
+  FOR: 840
+  GUEST: 5
+  HOLDER: 84
+  OCCUPIES: 26
+  OWNS: 230
+  PARADOX: 173
+  PARENT: 17
+  ROLE: 348
+  SAILS: 12
+rel_prop_count:
+  COLLECTOR:
+    signed: 5
+  DEBITOR:
+    comment: 1
+  FOR:
+    kind: 366
+    primary: 203
+    wrong: 10
+  GUEST:
+    joined: 5
+    leaves: 4
+    regularContributor: 4
+  HOLDER:
+    comment: 1
+  OCCUPIES: {}
+  OWNS:
+    comment: 37
+    currency: 147
+    deposit: 147
+    returned: 11
+    since: 17
+  PARADOX: {}
+  PARENT: {}
+  ROLE:
+    assemblyFeedback: 7
+    courses: 50
+    fee: 4
+    joined: 175
+    leaves: 88
+    noDuties: 10
+    noService: 10
+    reducedFee: 3
+    regularContributor: 96
+    winterStorage: 20
+  SAILS: {}
+...
+  at ./model_stats.pl line 68
