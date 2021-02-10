@@ -164,9 +164,10 @@ for my $node ( map { $_->get } $session->run('MATCH (p:Person) RETURN p')->list 
 	my ($street_extra, $street, $postcode, $place);
 	if (@street) {
 		@street = split m/\n/, $street[0]->get('a')->get('address');
-		$street_extra = shift @street if @street > 2;
+		$street_extra = shift @street if @street > 2 && $street[2] =~ m/^\d+/;
+		$street_extra = pop @street if @street > 2 && $street[1] =~ m/^\d+/;
 		($street, $place) = @street;
-		($postcode, $place) = ($1, $2) if $place =~ m/(\d+) (.*)/;
+		($postcode, $place) = ($1, $2) if $place =~ m/(\d+(?: [A-Z]{2})?) (.*)/;
 	}
 	
 	# - E-Mail
